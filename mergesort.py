@@ -36,10 +36,16 @@ def merge_sort(sort_list):
 
 
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
+axs[0].bar(x, my_list)
+axs[0].set_title("Before Merge Sort")
+axs[0].set_xlabel("Index")
+axs[0].set_ylabel("Value")
 merge_sort(my_list)
 x = range(len(my_list))
-plt.plot(x, my_list)
+axs[1].bar(x, my_list)
+axs[1].set_title("After Merge Sort")
+axs[1].set_xlabel("Index")
+fig.canvas.manager.set_window_title("Merge Sort Visualization")
 plt.show()
